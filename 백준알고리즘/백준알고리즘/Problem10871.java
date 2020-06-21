@@ -16,7 +16,7 @@ public class Problem10871 {
 		
 		if(max == a) {
 			
-		}
+		} // ¹Ù²Þ
 		
 	}
 }
