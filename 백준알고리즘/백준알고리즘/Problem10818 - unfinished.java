@@ -7,31 +7,44 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.StringTokenizer;
 
-public class Problem15552 {
+public class Problem10818 {
 
 	public static void main(String[] args) throws IOException {
 		
 		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in)); // 선언
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-		
-		int T = Integer.parseInt(bf.readLine());
+
+		int N = Integer.parseInt(bf.readLine());
 		
 		StringTokenizer st = new StringTokenizer(bf.readLine());
 		
-		int[] A = new int [T];
-		int[] B = new int [T];
+		int[] A = new int[N];
 		
-		for(int i = 0; i < T; i++) {
+		for(int i=0; i < N; i++ ) {
 			A[i] = Integer.parseInt(st.nextToken());
-			B[i] = Integer.parseInt(st.nextToken());
-			bw.write(A[i] + B[i] );
 		}
-			bw.flush();
-			bw.close();
+		
+		int tmp = 0;
+		
+		for(int i = 0; i < N - 1; i ++) {
+			for(int j = 0; j < N - 1 - i; j++)
+			{
+				if(A[j] >= A[j+1]) {
+					tmp = A[j+1];
+					A[j+1] = A[j];
+					A[j] = tmp;
+				}
+				else
+				{
+					continue;
+				}
+			}
 		}
 
+		bw.write(String.valueOf(A[0]));
+		bw.newLine();
+		bw.write(String.valueOf(A[N-1]));
+		bw.flush();
+		bw.close();
 	}
-
-//https://coding-factory.tistory.com/251 - BufferedReader, BufferWriter 사용법
-//https://dream-space.tistory.com/2 - BufferedReader, BufferWriter 사용법2
-//https://www.acmicpc.net/problem/15552
+}
