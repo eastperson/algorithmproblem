@@ -63,5 +63,4 @@ public class Problem2609 {
 		System.out.println(Min);
 
 	}
-
 }
