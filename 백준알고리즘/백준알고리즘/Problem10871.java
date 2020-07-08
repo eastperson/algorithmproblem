@@ -10,13 +10,16 @@ public class Problem10871 {
 		int N = sc.nextInt();
 		int X = sc.nextInt();
 		
-		int a = 0;
-		int b = 0;
-		int max = ( a > b) ? a : b;
+		int[] arr = new int[N];
 		
-		if(max == a) {
-			
-		} // ¹Ù²Þ // ¶Ç ¹Ù²Þ
+		for(int i = 0; i < arr.length; i++) {
+			arr[i] = sc.nextInt();
+		}
 		
+		for(int i = 0; i < arr.length; i++) {
+			if(arr[i] < X) {
+				System.out.println(arr[i]);
+			}
+		}
 	}
 }
