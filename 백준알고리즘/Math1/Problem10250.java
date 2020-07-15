@@ -19,7 +19,6 @@ public class Problem10250 {
 			else {
 				floor = N % H;
 			}
-			
 			int number = N / H + 1;
 			 
 			if (N%H == 0) {
