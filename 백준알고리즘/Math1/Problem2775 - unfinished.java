@@ -52,7 +52,7 @@ public class Problem2775 {
 				}
 			}
 			
-			System.out.println(result);
+			System.out.println(result); // 아 전혀 모르겠다.
 			
 		}
 
