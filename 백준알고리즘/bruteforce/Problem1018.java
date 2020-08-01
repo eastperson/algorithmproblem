@@ -45,8 +45,8 @@ public class Problem1018 {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		int m = Integer.parseInt(sc.next());
-		int n = Integer.parseInt(sc.next());
+		int m = Integer.parseInt(sc.nextLine());
+		int n = Integer.parseInt(sc.nextLine());
 		
 		Board b = new Board(m, n);
 	
@@ -54,9 +54,9 @@ public class Problem1018 {
 			for(int i = 0; i < b.arr.length; i++) {
 				for(int j = 0; j < b.arr[i].length; j++) {
 					int k = 0;
-					if(sc.next().equalsIgnoreCase("B")) {
+					if(sc.nextLine().charAt(j) == 'W') {
 						k = 1;
-					} else if (sc.next().equalsIgnoreCase("W")) {
+					} else if (sc.nextLine().charAt(j) == 'B') {
 						k = 0;
 					}
 					b.arr[i][j] = k;
