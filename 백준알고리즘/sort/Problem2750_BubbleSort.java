@@ -2,7 +2,7 @@ package sort;
 
 import java.util.Scanner;
 
-public class Problem2750 {
+public class Problem2750_BubbleSort {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
