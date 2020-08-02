@@ -1,19 +1,15 @@
-package 백준알고리즘;
+package String;
 
 import java.util.Scanner;
 
-import Function.Function;
+public class Problem11654 {
 
-
-
-public class test {
-	
 	public static void main(String[] args) {
-		
 		Scanner sc = new Scanner(System.in);
+		char ch = sc.nextLine().charAt(0);
+		int i = (int) ch;
 		
-		int A = sc.nextInt();
-		Function.a(A);
+		System.out.println(i);
 
 	}
 
