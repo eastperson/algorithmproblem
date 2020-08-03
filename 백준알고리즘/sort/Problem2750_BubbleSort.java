@@ -34,11 +34,7 @@ public class Problem2750_BubbleSort {
 			}
 		for(int i = 0; i < arr.length; i++) {
 			System.out.println(arr[i]);
-		}
-		
-		
-		
+		}		
 	}
-	
 }
 // 1 2 3 4 5
