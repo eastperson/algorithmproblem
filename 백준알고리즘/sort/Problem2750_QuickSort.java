@@ -5,20 +5,36 @@ import java.util.Scanner;
 
 public class Problem2750_QuickSort {
 	
+	private int[] arr = new int[10];
 	
-	public void quickSort(int n, int[] arr) {
-
-		int pivot = (int) n/2;
-		for(int i = 0; i <= pivot; i++) {
-			if(arr[i] >= arr[pivot]) {
-				for(int j = arr.length-1; j > pivot; j--) {
-					if(arr[j] < arr[pivot]) {
-						int tmp = arr[j];
-						arr[j] = arr[i];
-						arr[i] = tmp;
-					}
+	public static void quickSort(int left, int right, int[] arr) {
+		
+		int pivot = left; // 피봇은 첫 숫자로 시작
+		int j = pivot; // 
+		int i = left+1;
+		int temp; // 스왑을 위한 변수
+		
+		if(left<right) {
+				// i를 right까지 반복
+			for(; i<= right; i++) { 
+					// swap 과정
+				if(arr[i] < arr[pivot]) { // 키값보다 큰 값을 만날 때 까지 오른쪽으로 이동
+					j++;
+					temp=arr[j];
+					arr[j]=arr[i];
+					arr[i]=temp;
+					
 				}
 			}
+			temp = arr[left];
+			arr[left] = arr[j];
+			arr[j] = temp;
+			
+			pivot = j; // 분할
+			
+			// 정렬과정
+			quickSort(left,pivot-1,arr);
+			quickSort(pivot+1,right,arr);
 		}
 	}
 	
@@ -30,10 +46,10 @@ public class Problem2750_QuickSort {
 			arr[i] = sc.nextInt();
 		}
 		
-		Problem2750_QuickSort p = new Problem2750_QuickSort();
-		
-		p.quickSort(n, arr);
-		
+		quickSort(0, arr.length - 1, arr);
+		for(int i : arr) {
+			System.out.println(i);
+		}
 
 
 	}
