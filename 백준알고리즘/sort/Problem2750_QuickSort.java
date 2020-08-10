@@ -38,6 +38,33 @@ public class Problem2750_QuickSort {
 		}
 	}
 	
+	public static void quickSort2(int start, int end, int[] arr) {
+		start = arr[0];
+		end = arr[arr.length-1];
+		int i = start + 1;
+		int j = end;
+		int pivot = start;
+		int tmp;
+		while(i <= j) {
+			while(arr[i] <= arr[pivot]) {
+				while(arr[i] <= arr[pivot]) {
+					i++;
+				}
+				while(arr[j] >= arr[pivot] && j > start) {
+					j--;
+				}
+			}
+			if(i > j) {
+				tmp = arr[j];
+				arr[j] = arr[i];
+				arr[i] = tmp;
+			}
+		}
+		
+		quickSort2(start, j-1, arr);
+		quickSort2(j+1, end, arr);
+	}
+	
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
