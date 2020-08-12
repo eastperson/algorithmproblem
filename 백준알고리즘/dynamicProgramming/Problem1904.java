@@ -18,5 +18,7 @@ public class Problem1904 {
 		
 		// 원래 이진수 숫자
 		
+		// 
+		
 	}
 }
