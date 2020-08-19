@@ -1,4 +1,4 @@
-package 백준알고리즘;
+package ForStatement;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -16,20 +16,16 @@ public class Problem15552 {
 		
 		int T = Integer.parseInt(bf.readLine());
 		
-		StringTokenizer st = new StringTokenizer(bf.readLine());
-		
-		int[] A = new int [T];
-		int[] B = new int [T];
-		
 		for(int i = 0; i < T; i++) {
-			A[i] = Integer.parseInt(st.nextToken());
-			B[i] = Integer.parseInt(st.nextToken());
-			bw.write(A[i] + B[i] );
+			StringTokenizer st = new StringTokenizer(bf.readLine());
+			int a = Integer.parseInt(st.nextToken());
+			int b = Integer.parseInt(st.nextToken());
+			bw.write(""+(a+b));
+			bw.newLine();
 		}
 			bw.flush();
 			bw.close();
 		}
-
 	}
 
 //https://coding-factory.tistory.com/251 - BufferedReader, BufferWriter 사용법

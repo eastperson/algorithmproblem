@@ -1,4 +1,4 @@
-package 백준알고리즘;
+package Array;
 
 import java.util.Scanner;
 
@@ -17,15 +17,20 @@ public class Problem3052 {
 		
 		for(int i = 0; i <arr.length; i++) {
 			for(int j = 0; j < arr.length; j++) {
-				if(arr[i] == arr[j]) {
-					count += 1;
+				if(i != j && arr[i] == arr[j]) {
+					arr[j] = -1;
 				}
 			}
 		}
 		
-		int difCount = arr.length - ((count - 10) / 2);
+		for(int i = 0; i < arr.length; i++) {
+			if(arr[i] >= 0) {
+				count++;
+			}
+		}
+
 		
-		System.out.println(difCount);
+		System.out.println(count);
 
 	}
 
