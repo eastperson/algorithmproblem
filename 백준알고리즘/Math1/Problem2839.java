@@ -2,42 +2,38 @@ package Math1;
 
 import java.util.Scanner;
 
-class Sugar {
-	int weight;
-
-	public Sugar(int weight) {
-		super();
-		this.weight = weight;
-	}
-	
-	
-}
-
-class Bag {
-	int amount;
-
-	public Bag(int amount) {
-		super();
-		this.amount = amount;
-	}
-	
-	
-}
 
 public class Problem2839 {
+	
+	int count = 0;
+	
+	public int check5(int n) {
+		if(n % 5 == 0) {
+			count = n / 5;
+			return n / 5;
+		}
+		if(n / 5 > 0) {
+			count++;
+			return n - 5;
+		}
+		return n - 5;
+	}
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		Sugar s5 = new Sugar(5);
-		Sugar s3 = new Sugar(3);
-		Bag b5 = new Bag(5);
-		Bag b3 = new Bag(3);
 		int n = sc.nextInt();
 			
 		int result1 = n % 5;
 		int result2 = n % 3;
-		int fin;
-		int fin2;
+		int result3 = n / 15;
+		int fin = 0;
+		int fin2 = 0;
+		
+		
+		if(result3 > 0) {
+			fin += n/5;
+		}
+			
 		
 		if(result1 == 0) {
 			fin = n / 5;
