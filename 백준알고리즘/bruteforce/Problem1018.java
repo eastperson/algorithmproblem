@@ -1,6 +1,76 @@
 package bruteforce;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+//보드 클래스
+
+class Board {
+	
+	Map<Integer, List<Boolean>> map = new HashMap<>();
+	
+	Board(){
+		for(int i = 0; i < 8; i++) {
+			this.map.put(i, new ArrayList<Boolean>());
+		}
+	}
+	
+	public Map<Integer, List<Boolean>> basicBoard() {
+		
+		Map<Integer, List<Boolean>> map = new HashMap<>();
+		for(int i = 0; i < 8; i++) {
+			for(int j = 0; j < 8; j++) {
+				map.get(i).add(j % 2 == 0);
+			}
+		}
+		
+		return map;
+	}
+	
+public Map<Integer, List<Boolean>> basicBoard2() {
+		
+		Map<Integer, List<Boolean>> map = new HashMap<>();
+		for(int i = 0; i < 8; i++) {
+			for(int j = 0; j < 8; j++) {
+				map.get(i).add(j % 2 != 0);
+			}
+		}
+		
+		return map;
+	}
+}
+
+
+
+public class Problem1018 {
+	public static void main(String[] args) {
+		Board board = new Board();
+		
+		
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
