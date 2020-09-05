@@ -20,5 +20,7 @@ public class Problem10773 {
 		for(int i = 0; i < stack.size(); i++) {
 			sum += stack.get(i);
 		}
+		
+		System.out.println(sum);
 	}
 }
